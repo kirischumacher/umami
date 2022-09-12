@@ -1,4 +1,7 @@
 (window => {
+  if (!fetch) {
+    return;
+  }
   const {
     screen: { width, height },
     navigator: { language },

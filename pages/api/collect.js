@@ -17,7 +17,10 @@ export default async (req, res) => {
   const ignoreIps = process.env.IGNORE_IP;
   const ignoreHostnames = process.env.IGNORE_HOSTNAME;
 
-  if (ignoreIps || ignoreHostnames) {
+  if (
+    (ignoreIps || ignoreHostnames) &&
+    req.body.payload.website === process.env.PRODUCTION_WEBSITE_ID
+  ) {
     const ips = [];
 
     if (ignoreIps) {
