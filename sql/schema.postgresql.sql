@@ -48,6 +48,7 @@ CREATE TABLE "session" (
     "screen" VARCHAR(11),
     "language" VARCHAR(35),
     "country" CHAR(2),
+    "city" varchar(90),
 
     PRIMARY KEY ("session_id")
 );
